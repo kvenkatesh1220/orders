@@ -1,0 +1,4 @@
+app/theme
+app/js/jquery*
+node_modules
+bower_components
