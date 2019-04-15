@@ -1,13 +1,15 @@
-FROM node:boron
+FROM node:latest
 
 # Create app directory
-RUN mkdir -p /usr/src/app/monolith
-WORKDIR /usr/src/app/monolith
+#RUN mkdir -p /usr/src/app/monolith
+WORKDIR /app
 
-COPY package.json /usr/src/app/monolith/package.json
+COPY package.json /app
 RUN npm install
 #RUN npm install --only=dev
 
-COPY . /usr/src/app/monolith
+COPY . /app
 
-# EXPOSE 8080
+EXPOSE 8082
+
+CMD ["npm", "start"]
